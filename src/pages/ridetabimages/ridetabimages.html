@@ -1,0 +1,24 @@
+<ion-header *ngIf="!showFullscreenImg">
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ride.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row *ngFor="let row of imagesgrid">
+      <ion-col width-33 *ngFor="let img of row">
+          <img [src]="ride.getImageThumbnail(img,120,120)" (click)="showOverlay(img)">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div *ngIf="showFullscreenImg" class='overlay' (click)="closeOverlay()" >
+    <ion-icon name="close-circle"></ion-icon>
+    <img class='overlay-content' [src]="ride.getImageThumbnail(selectedImg,800,0)">
+ </div>
+</ion-content>
+

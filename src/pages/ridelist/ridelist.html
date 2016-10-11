@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bikingspots</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="page1">
+
+  <div center>
+    <h2>Bienvenue !</h2>
+    <ion-searchbar (ionInput)="searchRides($event)"></ion-searchbar>
+  </div>
+
+  <hr>
+
+  <ion-list *ngIf="hasSearchResults">
+    <ion-list-header primary>
+      Résultats
+    </ion-list-header>
+    <ion-item *ngFor="let ride of searchRidesResult" (click)="openRide(ride)" detail-push>
+      <ion-thumbnail *ngIf="ride.thumbnail" item-left>
+        <img [src]="ride.thumbnail">
+      </ion-thumbnail>      
+      <h2>{{ride.name}}</h2>
+      <p>{{ride.address}}</p>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list *ngIf="!hasSearchResults">
+    <ion-list-header>
+      Parcours populaires
+    </ion-list-header>
+    <ion-item *ngFor="let ride of popularRides" (click)="openRide(ride)" detail-push>
+      <ion-thumbnail *ngIf="ride.thumbnail" item-left>
+        <img [src]="ride.thumbnail">
+      </ion-thumbnail>      
+      <h2>{{ride.name}}</h2>
+      <p>{{ride.address}}</p>
+    </ion-item>
+
+    <ion-list-header>
+      Derniers parcours
+    </ion-list-header>
+    <ion-item *ngFor="let ride of lastRides" (click)="openRide(ride)" detail-push>
+      <ion-thumbnail *ngIf="ride.thumbnail" item-left>
+        <img [src]="ride.thumbnail">
+      </ion-thumbnail>
+      <h2>{{ride.name}}</h2>
+      <p>{{ride.address}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

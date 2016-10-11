@@ -1,0 +1,37 @@
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 100%;
+    position: relative; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    overflow-x: fixed; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    padding: 6px;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    box-shadow: 0px 0px 60px 20px rgba(0, 0, 0, 0.55);
+    background: #ffffff;
+  
+    max-width: 95%;
+    max-height: 95%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.overlay-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1001; /* Sit on top */
+}

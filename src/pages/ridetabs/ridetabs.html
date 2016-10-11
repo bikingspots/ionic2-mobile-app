@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{selectedRide.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-tabs>
+  <ion-tab [root]="tabMap" [rootParams]="rideParams" tabTitle="Map" tabIcon="home"></ion-tab>
+  <ion-tab *ngIf="selectedRide.images.length" [root]="tabImages" [rootParams]="rideParams" [tabBadge]="selectedRide.images.length" tabBadgeStyle="primary" tabTitle="Pictures" tabIcon="images"></ion-tab>
+  <ion-tab [root]="tabDetails" [rootParams]="rideParams"  tabTitle="Details" tabIcon="information-circle"></ion-tab>
+</ion-tabs>
+

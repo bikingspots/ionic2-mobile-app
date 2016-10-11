@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ride.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <div id="map"  style="width: 100%; height: 300px;">
+    </div>
+    
+    <ion-row margin-top>
+      <ion-col no-margin no-padding width-66>
+        <canvas id="myChart" #myChart width="400" height="300"></canvas>
+      </ion-col>
+      <ion-col no-margin no-padding>
+        <ion-list no-lines no-padding>
+          <ion-item no-margin no-padding>
+            <ion-icon name="pin"></ion-icon> {{ride.address}}
+          </ion-item>
+          <ion-item no-padding>
+            <ion-icon name="arrow-round-forward"></ion-icon> {{ride.length/1000 | number:'1.1-1'}}km
+          </ion-item>
+          <ion-item no-padding>
+            <ion-icon negative name="arrow-round-up"></ion-icon> {{ride.plusDeniv}}m
+          </ion-item>
+          <ion-item no-padding>
+            <ion-icon positive name="arrow-round-down"></ion-icon> {{ride.minusDeniv}}m
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <div padding>
+      <button primary text-center outline block (click)="guideRide(ride)">
+        <ion-icon name="navigate"></ion-icon>
+        Guide me !
+      </button>
+    </div>
+    <!--
+    <div no-padding *ngIf="ride.images.length">
+      <ion-scroll  style='height:100px' scrollX="true">  
+          <scroll-content style='padding:0px'>
+        <ion-row>
+          <ion-col width-25 *ngFor="let img of ride.images">
+            <img [src]="ride.getImageThumbnail(img,120,120)">
+          </ion-col>
+        </ion-row>
+          </scroll-content>
+      </ion-scroll>
+      <hr>
+    </div >
+    -->
+  </div >
+</ion-content>
