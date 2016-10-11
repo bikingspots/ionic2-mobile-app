@@ -2,13 +2,13 @@ import {Geolocation} from 'ionic-native';
 import {Component, ViewChild, ElementRef} from '@angular/core';
 import {Tabs, NavController, NavParams, Platform} from 'ionic-angular';
 import {Ride} from '../../entities/Ride';
-//import * as Leaflet from "leaflet";
+import * as Leaflet from "leaflet";
 //import {Rating} from '../../entities/Rating';
 import {BikingspotsService} from '../../services/BikingspotsService';
 import {GPSUtils} from '../../entities/GPSUtils';
 
 
-declare var Leaflet;
+//declare var Leaflet;
 declare var omnivore;
 declare var Chart;
 
@@ -153,7 +153,7 @@ export class RideTabMap {
 
     map = Leaflet
       .map("map")
-      .setView(Leaflet.latLng(46, 6), 13)
+      .setView(Leaflet.latLng(46, 6), 13);
 
     Leaflet.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png').addTo(map);
 
