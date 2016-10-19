@@ -7,8 +7,7 @@ import {BikingspotsService} from '../../services/BikingspotsService';
 import {RideTabs} from '../ridetabs/ridetabs'
 
 @Component({
-  templateUrl: './ridelist.html',
-  providers:[BikingspotsService]
+  templateUrl: './ridelist.html'
 })
 
 export class RideList {

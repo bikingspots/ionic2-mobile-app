@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <button menuToggle>
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Bikingspots</ion-title>
@@ -17,7 +17,7 @@
   <hr>
 
   <ion-list *ngIf="hasSearchResults">
-    <ion-list-header primary>
+    <ion-list-header color="primary">
       Résultats
     </ion-list-header>
     <ion-item *ngFor="let ride of searchRidesResult" (click)="openRide(ride)" detail-push>

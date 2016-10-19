@@ -8,7 +8,6 @@ declare var google;
 
 @Component({
   templateUrl: './ridemap.html',
-  providers:[BikingspotsService]
 })
 
 export class RideMap {

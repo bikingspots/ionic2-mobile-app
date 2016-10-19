@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -11,6 +11,8 @@ import {RideTabMap} from '../pages/ridetabmap/ridetabmap'
 
 import {BikingspotsService} from '../services/BikingspotsService';
 
+import {Rating} from '../entities/Rating';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -19,7 +21,8 @@ import {BikingspotsService} from '../services/BikingspotsService';
     RideTabs,
     RideTabDetails,
     RideTabImages,
-    RideTabMap
+    RideTabMap,
+    Rating
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -34,6 +37,7 @@ import {BikingspotsService} from '../services/BikingspotsService';
     RideTabImages,
     RideTabMap
   ],
-  providers: [BikingspotsService]
+  providers: [BikingspotsService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

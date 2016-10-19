@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <button menuToggle>
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{ride.name}}</ion-title>
@@ -35,7 +35,7 @@
     </ion-row>
 
     <div padding>
-      <button primary text-center outline block (click)="guideRide(ride)">
+      <button ion-button color="primary" text-center outline block (click)="guideRide(ride)">
         <ion-icon name="navigate"></ion-icon>
         Guide me !
       </button>
